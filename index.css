@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,400&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav ul li{
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+}
+.btn{
+font-weight: 500;
+font-size: 16px;
+}
+.bold-head{
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+}
+
+.list{
+background: #FFFFFF;
+box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.19);
+border-radius: 8px;
+}
+
+.taskbox{
+background: #FFFFFF;
+box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.19);
+border-radius: 8px;
+
+}
+
+.delete{
+    color: red;
+}
+
+.ash-color{
+    color: #8B8B8B;
+}
+
+input[type=checkbox]{
+    height:30px;
+    width:30px;
+    
+}
+input[type=checkbox]:checked{
+    background-color: #26AD13;
+}
+
+.status {
+    width: .7rem;
+    height: .7rem;
+    border-radius: 50%;
+    background: #EBB705;
+    margin-bottom: 12px;
+  }
+
+
