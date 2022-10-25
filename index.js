@@ -4,6 +4,8 @@ let item
 // variable for recieving edited array index
 let editValue
 
+//for bolding the all anchor tag
+document.getElementById("boldall"). style. fontWeight = "1000"
 //array creation
 
 const string  = localStorage.getItem("TO-DO-ARRAY")
@@ -301,11 +303,16 @@ function deleteCompleted(){
 
 //function for all task
 function alltask(){
-    // document.getElementById("bold"). style. fontWeight = "1000"
+    document.getElementById("boldall"). style. fontWeight = "1000"
+
+
     document.getElementById("duplicater").style.display = "block"
     document.getElementById("activeheading").style.display = "block"
     document.getElementById("completeheading").style.display = "block"
     document.getElementById("completed").style.display = "block"
+
+    document.getElementById("boldactive"). style. fontWeight = ""
+    document.getElementById("boldcompleted"). style. fontWeight = ""
     divCreation()
     
   
@@ -314,22 +321,35 @@ function alltask(){
 }
 //function for active task
 function activeTask(){
+    document.getElementById("boldactive"). style. fontWeight = "1000"
+
 
     document.getElementById("duplicater").style.display = "block"
     document.getElementById("activeheading").style.display = "block"
     document.getElementById("completed").style.display = "none"
     document.getElementById("completeheading").style.display = "none"
-  
+
+
+    document.getElementById("boldcompleted"). style. fontWeight = ""
+    document.getElementById("boldall"). style. fontWeight = ""
 
 
 }
 //function for completed task
 function completeTask(){
 
+    document.getElementById("boldcompleted"). style. fontWeight = "1000"
+
+
     document.getElementById("duplicater").style.display = "none"
     document.getElementById("activeheading").style.display = "none"
     document.getElementById("completeheading").style.display = "block"
     document.getElementById("completed").style.display = "block"
+
+
+    document.getElementById("boldactive"). style. fontWeight = ""
+    document.getElementById("boldall"). style. fontWeight = ""
+
   
 
 

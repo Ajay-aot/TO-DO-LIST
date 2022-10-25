@@ -49,15 +49,15 @@
                     aria-current="page"
                     href="#"
                     onclick="alltask()"
-                    id="bold"
+                    id="boldall"
                     >All(<span id="alltaskCount"></span>)</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link ash-color" href="#" onclick="activeTask()">Active(<span id="activetaskCount"></span>)</a>
+                  <a class="nav-link ash-color"  id="boldactive" href="#" onclick="activeTask()">Active(<span id="activetaskCount"></span>)</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link ash-color" href="#" onclick="completeTask()">Completed(<span id="completedtaskCount"></span>)</a>
+                  <a class="nav-link ash-color"  id="boldcompleted" href="#" onclick="completeTask()">Completed(<span id="completedtaskCount"></span>)</a>
                 </li>
               </ul>
               <form class="d-flex gap-4" role="search ">
