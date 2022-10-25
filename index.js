@@ -6,9 +6,12 @@ let editValue
 
 //array creation
 
-// const string  = localStorage.getItem("TO-DO-ARRAY")
+const string  = localStorage.getItem("TO-DO-ARRAY")
 
-let taskArray = [] //JSON.parse(string)
+let taskArray = JSON.parse(string) || [] 
+divCreation()
+completedDivcreation()
+findCountOfTask()
 
 //eventlistener for sorting
 document.querySelector(".form-select").addEventListener("change",function(){
@@ -25,6 +28,11 @@ document.querySelector(".form-select").addEventListener("change",function(){
 
      }
 })
+
+
+
+
+   
 
 // creating a new div when clicking the add task button
 
@@ -77,6 +85,8 @@ function newTask(){
 
 
 }
+
+
 
 
 // function for creating new division        
@@ -178,6 +188,9 @@ function deleteItem(){
     console.log(taskArray)
     findCountOfTask()
 
+    var  jsonarray = JSON.stringify(taskArray)
+    localStorage.setItem("TO-DO-ARRAY",jsonarray)
+
 }
 
 // function for editing addedtask
@@ -197,6 +210,8 @@ function updateTask(){
     taskArray[editValue].desc = document.getElementById("update-desc").value
     taskArray[editValue].date = document.getElementById("update-Date").value
     divCreation()
+    var  jsonarray = JSON.stringify(taskArray)
+    localStorage.setItem("TO-DO-ARRAY",jsonarray)
 }
 
 
@@ -227,10 +242,10 @@ function dateSort(array){
     
     {
 
-    if( a.date.toLowerCase() < b.date.toLowerCase())
+    if( a.date < b.date)
     return -1
 
-    if( a.date.toLowerCase() > b.date.toLowerCase())
+    if( a.date > b.date)
     return 1
 
     return 0
@@ -260,6 +275,9 @@ function checking(checkindex) {
   completedDivcreation()  
   findCountOfTask()
 
+  var  jsonarray = JSON.stringify(taskArray)
+    localStorage.setItem("TO-DO-ARRAY",jsonarray)
+
 }
 
 //function for deleting completed task
@@ -277,15 +295,19 @@ function deleteCompleted(){
          completedDivcreation()
          findCountOfTask()
     }
+    var  jsonarray = JSON.stringify(taskArray)
+    localStorage.setItem("TO-DO-ARRAY",jsonarray)
 }
 
 //function for all task
 function alltask(){
-
+    // document.getElementById("bold"). style. fontWeight = "1000"
     document.getElementById("duplicater").style.display = "block"
     document.getElementById("activeheading").style.display = "block"
     document.getElementById("completeheading").style.display = "block"
     document.getElementById("completed").style.display = "block"
+    divCreation()
+    
   
 
 
@@ -337,16 +359,39 @@ function findCountOfTask(){
 
     }
 }
-//function for searching
+    
+// for searching
 function search(){
+   let searchInput = document.getElementById("exampleFormControlInput1").value
+   console.log(searchInput)
+   let div = document.querySelectorAll(".taskbox")
+   console.log(div)
   
-    var searchValue = getElementById("exampleFormControlInput1").innerHTML
+
+   for(i = 0;i < taskArray.length ; i++ ){
+    
+      
+
+
+
+
+   }
+}
+
+
+
+
+
+
+
+      
+        
+        
 
     
 
 
 
-}
 
 
 

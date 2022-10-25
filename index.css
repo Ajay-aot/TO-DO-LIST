@@ -57,5 +57,38 @@ input[type=checkbox]:checked{
     background: #EBB705;
     margin-bottom: 12px;
   }
+#darkblue{
+      background-color: #0C39C7;
+  }
+
+#clearcomplete{
+
+    color:#0C39C7;
+    --bs-btn-hover-bg:none;
+    --bs-btn-active-bg:none;
+
+    
+  }
+
+#bytitle{
+width: 146px;
+height: 42px;
+}
+
+#weight{
+font-weight: 500;
+font-size: 16px;
+}
 
 
+.blue{
+    color: #09174A;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.items{
+    font-weight: 500;
+    font-size: 16px;
+  
+}
