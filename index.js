@@ -31,7 +31,6 @@ document.querySelector(".form-select").addEventListener("change",function(){
         dateSort(taskArray)
         divCreation()
 
-
      }
 })
 
@@ -113,7 +112,7 @@ function divCreation(){
             <p class="addedtaskheading bold-head"> ${taskArray[i].title} <p>
             <div class="status"></div>
             </div>
-            <p class="date"> By ${taskArray[i].date} <p>
+            <p class="date" id ="date${i}"> By ${taskArray[i].date} <p>
         </div>
         
    </div>
@@ -126,6 +125,7 @@ function divCreation(){
 
    </div>
     `
+    getDate(i)
     }
    }
 
@@ -266,7 +266,7 @@ function dateSort(array){
 function checking(checkindex) {
   console.log("hai")
   var checkround = document.getElementById(checkindex)
-
+//   console.log(checkround)
   if(checkround.checked == true){
     taskArray[checkindex].status = "completed"
     console.log(taskArray[checkindex].status)
@@ -398,6 +398,7 @@ function search(){
 
    document.querySelector('#duplicater').innerHTML = ""
    document.querySelector('#completed').innerHTML = ""
+   
    for(i=0;i<filteredArray.length;i++){
     activeSearch()
     completedSearch()
@@ -420,7 +421,7 @@ function activeSearch(){
                 <p class="addedtaskheading bold-head"> ${taskArray[filteredArray[i]].title}<p>
                 <div class="status"></div>
                 </div>
-                <p class="date"> By ${taskArray[filteredArray[i]].date} <p>
+                <p class="date" id ="date${filteredArray[i]}"> By ${taskArray[filteredArray[i]].date} <p>
             </div>
             
        </div>
@@ -433,6 +434,7 @@ function activeSearch(){
     
        </div>
         `
+        getDate(filteredArray[i])
         }
 
 
@@ -469,7 +471,16 @@ function completedSearch(){
 
 
 }
-
+function getDate(index) {
+    let currentDate = new Date();
+    let todoDAte = new Date(taskArray[index].date);
+    if(currentDate > todoDAte)
+    { 
+      document.getElementById(`date${index}`).style.color = " #C03503";
+      document.getElementById(`date${index}`).style.backgroundColor = "rgba(192, 53, 3, 0.06)";
+    }
+    
+}
 
 
 
